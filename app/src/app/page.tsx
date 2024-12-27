@@ -89,6 +89,19 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
+
+        <a
+          href="/environment"
+          className={styles.card}
+          rel="noopener noreferrer"
+        >
+          <h2>
+            Environment <span>-&gt;</span>
+          </h2>
+          <p>
+            環境変数の取り扱い
+          </p>
+        </a>
       </div>
     </main>
   );
