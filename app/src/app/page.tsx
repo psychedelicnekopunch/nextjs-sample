@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -90,7 +91,7 @@ export default function Home() {
           </p>
         </a>
 
-        <a
+        <Link
           href="/environment"
           className={styles.card}
           rel="noopener noreferrer"
@@ -101,7 +102,7 @@ export default function Home() {
           <p>
             環境変数の取り扱い
           </p>
-        </a>
+        </Link>
       </div>
     </main>
   );
