@@ -5,17 +5,18 @@
   "scripts": {
     "dev": "rm -f .env.local && cp .env.dev .env.local && next dev --turbopack",
     "dev:stg": "rm -f .env.local && cp .env.stg .env.local && next dev --turbopack",
-    "build": "rm -f .env.local && cp .env.dev .env.local && next build",
+    "build": "next build",
+    "build:dev": "rm -f .env.local && cp .env.dev .env.local && next build",
     "build:stg": "rm -f .env.local && cp .env.stg .env.local && next build",
     "build:prod": "rm -f .env.local && cp .env.prod .env.local && next build",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028"
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "the-new-css-reset": "^1.11.3"
   },
   "devDependencies": {
     "@types/node": "^20",
