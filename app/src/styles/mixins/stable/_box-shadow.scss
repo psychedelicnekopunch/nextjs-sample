@@ -1,0 +1,17 @@
+@use "sass:map";
+
+$box-shadow-large: 0 0 17px 0px rgba(#000, 0.1);
+$box-shadow-medium: 0 0 7px 0px rgba(#000, 0.1);
+$box-shadow-small: 0 0 3px 0 rgba(#000, 0.1);
+
+$box-shadow-sizes: (
+	"large": $box-shadow-large,
+	"medium": $box-shadow-medium,
+	"small": $box-shadow-small,
+);
+
+@mixin box-shadow($size: "") {
+	& {
+		box-shadow: map.get($box-shadow-sizes, $size);
+	}
+}

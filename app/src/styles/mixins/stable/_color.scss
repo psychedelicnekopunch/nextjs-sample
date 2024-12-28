@@ -1,0 +1,105 @@
+@use "sass:color";
+@use "sass:map";
+
+$color-superlight-gray: #f7f8f9 !default; // #f9f9f9;
+$color-light-gray: #e9ecf2 !default; // #f2f2f2;
+$color-gray: #d2d8dd !default; // #ddd;
+$color-dark-gray: #789 !default; // #999;
+$color-superdark-gray: #234 !default; // #444;
+
+$color-primary: #979 !default;
+$color-secondary: #d85 !default;
+$color-text: #444 !default;
+$color-anchor: #78a !default;
+$color-success: #7a8 !default;
+$color-danger: #f79 !default;
+$color-light: #f2f2f2 !default;
+$color-black: #012 !default; // #222;
+$color-white: #fff !default;
+
+$colors: (
+	// gray
+	"superlight-gray": $color-superlight-gray,
+	"light-gray": $color-light-gray,
+	"gray": $color-gray,
+	"dark-gray": $color-dark-gray,
+	"superdark-gray": $color-superdark-gray,
+	// color
+	"primary": $color-primary,
+	"secondary": $color-secondary,
+	"text": $color-text,
+	"anchor": $color-anchor,
+	"success": $color-success,
+	"danger": $color-danger,
+	"light": $color-light,
+	"black": $color-black,
+	"white": $color-white
+);
+
+@mixin color($color: "", $bg: "", $border: "") {
+	@if $color != "" {
+		& {
+			color: map.get($colors, $color);
+		}
+	}
+	@if $bg != "" {
+		& {
+			background-color: map.get($colors, $bg);
+		}
+	}
+	@if $border != "" {
+		& {
+			border-color: map.get($colors, $border);
+		}
+	}
+}
+
+@mixin lightColor($color: "", $bg: "", $border: "") {
+	@if $color != "" {
+		// color: lighten(map.get($colors, $color), 15%);
+		& {
+			color: color.scale(map.get($colors, $color), $lightness: 15%);
+		}
+	}
+	@if $bg != "" {
+		& {
+			background-color: color.scale(
+				map.get($colors, $bg),
+				$lightness: 15%
+			);
+		}
+	}
+	@if $border != "" {
+		& {
+			border-color: color.scale(
+				map.get($colors, $border),
+				$lightness: 15%
+			);
+		}
+	}
+}
+
+@mixin darkColor($color: "", $bg: "", $border: "") {
+	@if $color != "" {
+		// color: darken(map.get($colors, $color), 15%);
+		& {
+			color: color.scale(map.get($colors, $color), $lightness: -15%);
+		}
+	}
+	@if $bg != "" {
+		& {
+			background-color: color.scale(
+				map.get($colors, $bg),
+				$lightness: -15%
+			);
+		}
+	}
+	@if $border != "" {
+		& {
+			border-color: color.scale(
+				map.get($colors, $border),
+				$lightness: -15%
+			);
+		}
+	}
+}

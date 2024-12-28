@@ -1,0 +1,18 @@
+@use "media-query";
+
+@mixin hide($device: "") {
+	@if $device == "pc" {
+		@include media-query.pc {
+			& {
+				display: none;
+			}
+		}
+	}
+	@if $device == "sp" {
+		@include media-query.sp {
+			& {
+				display: none;
+			}
+		}
+	}
+}

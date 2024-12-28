@@ -1,0 +1,158 @@
+@use "sass:map";
+@use "media-query";
+
+$space-xxlarge: 96px !default;
+$space-xlarge: 48px !default;
+$space-large: 24px !default;
+$space-medium: 12px !default;
+$space-small: 8px !default;
+$space-xsmall: 6px !default;
+$space-xxsmall: 4px !default;
+
+$space-xxlarge-app: 48px !default;
+$space-xlarge-app: 24px !default;
+$space-large-app: 16px !default;
+$space-medium-app: 8px !default;
+$space-small-app: 6px !default;
+$space-xsmall-app: 4px !default;
+$space-xxsmall-app: 2px !default;
+
+$space-sizes: (
+	"xxlarge": $space-xxlarge,
+	"xlarge": $space-xlarge,
+	"large": $space-large,
+	"medium": $space-medium,
+	"small": $space-small,
+	"xsmall": $space-xsmall,
+	"xxsmall": $space-xxsmall,
+	"0": 0,
+	0: 0,
+	"auto": auto, // "unset": unset,
+);
+
+$space-sizes-app: (
+	"xxlarge": $space-xxlarge-app,
+	"xlarge": $space-xlarge-app,
+	"large": $space-large-app,
+	"medium": $space-medium-app,
+	"small": $space-small-app,
+	"xsmall": $space-xsmall-app,
+	"xxsmall": $space-xxsmall-app,
+	"0": 0,
+	0: 0,
+	"auto": auto, // "unset": unset,
+);
+
+@mixin padding($all: "", $top: "", $right: "", $bottom: "", $left: "") {
+	@each $key, $value in $space-sizes {
+		@if $key != "auto" {
+			@if $key == $all {
+				& {
+					padding: $value;
+				}
+				@include media-query.sp {
+					& {
+						padding: map.get($space-sizes-app, $all);
+					}
+				}
+			} @else {
+				@if $key == $top {
+					& {
+						padding-top: $value;
+					}
+					@include media-query.sp {
+						& {
+							padding-top: map.get($space-sizes-app, $top);
+						}
+					}
+				}
+				@if $key == $right {
+					& {
+						padding-right: $value;
+					}
+					@include media-query.sp {
+						& {
+							padding-right: map.get($space-sizes-app, $right);
+						}
+					}
+				}
+				@if $key == $bottom {
+					& {
+						padding-bottom: $value;
+					}
+					@include media-query.sp {
+						& {
+							padding-bottom: map.get($space-sizes-app, $bottom);
+						}
+					}
+				}
+				@if $key == $left {
+					& {
+						padding-left: $value;
+					}
+					@include media-query.sp {
+						& {
+							padding-left: map.get($space-sizes-app, $left);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin margin($all: "", $top: "", $right: "", $bottom: "", $left: "") {
+	@each $key, $value in $space-sizes {
+		@if $key == $all {
+			& {
+				margin: $value;
+			}
+			@include media-query.sp {
+				& {
+					margin: map.get($space-sizes-app, $all);
+				}
+			}
+		} @else {
+			@if $key == $top {
+				& {
+					margin-top: $value;
+				}
+				@include media-query.sp {
+					& {
+						margin-top: map.get($space-sizes-app, $top);
+					}
+				}
+			}
+			@if $key == $right {
+				& {
+					margin-right: $value;
+				}
+				@include media-query.sp {
+					& {
+						margin-right: map.get($space-sizes-app, $right);
+					}
+				}
+			}
+			@if $key == $bottom {
+				& {
+					margin-bottom: $value;
+				}
+				@include media-query.sp {
+					& {
+						margin-bottom: map.get($space-sizes-app, $bottom);
+					}
+				}
+			}
+			@if $key == $left {
+				& {
+					margin-left: $value;
+				}
+				@include media-query.sp {
+					& {
+						margin-left: map.get($space-sizes-app, $left);
+					}
+				}
+			}
+		}
+	}
+}

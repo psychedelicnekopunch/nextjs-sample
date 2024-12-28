@@ -1,0 +1,41 @@
+$border-light: 1px #f7f8f9 solid !default;
+$border-medium: 1px #eee solid !default;
+$border-dark: 1px #abc solid !default;
+
+$border-brightness: (
+	"light": $border-light,
+	"medium": $border-medium,
+	"dark": $border-dark,
+	"0": 0,
+);
+
+@mixin border($all: "", $top: "", $right: "", $bottom: "", $left: "") {
+	@each $key, $value in $border-brightness {
+		@if $key == $all {
+			& {
+				border: $value;
+			}
+		} @else {
+			@if $key == $top {
+				& {
+					border-top: $value;
+				}
+			}
+			@if $key == $right {
+				& {
+					border-right: $value;
+				}
+			}
+			@if $key == $bottom {
+				& {
+					border-bottom: $value;
+				}
+			}
+			@if $key == $left {
+				& {
+					border-left: $value;
+				}
+			}
+		}
+	}
+}

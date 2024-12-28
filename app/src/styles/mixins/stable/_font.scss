@@ -1,0 +1,63 @@
+@use "sass:map";
+@use "media-query";
+
+$font-xxlarge: 32px !default;
+$font-xlarge: 24px !default;
+$font-large: 18px !default;
+$font-medium: 14px !default;
+$font-small: 13px !default;
+$font-xsmall: 12px !default;
+$font-xxsmall: 11px !default;
+
+$font-xxlarge-app: 18px !default;
+$font-xlarge-app: 16px !default;
+$font-large-app: 14px !default;
+$font-medium-app: 13px !default;
+$font-small-app: 12px !default;
+$font-xsmall-app: 11px !default;
+$font-xxsmall-app: 11px !default;
+
+$font-line-height: 150% !default;
+
+$font-sizes: (
+	"xxlarge": $font-xxlarge,
+	"xlarge": $font-xlarge,
+	"large": $font-large,
+	"medium": $font-medium,
+	"small": $font-small,
+	"xsmall": $font-xsmall,
+	"xxsmall": $font-xxsmall,
+);
+
+$font-sizes-app: (
+	"xxlarge": $font-xxlarge-app,
+	"xlarge": $font-xlarge-app,
+	"large": $font-large-app,
+	"medium": $font-medium-app,
+	"small": $font-small-app,
+	"xsmall": $font-xsmall-app,
+	"xxsmall": $font-xxsmall-app,
+);
+
+@mixin font($size: "", $weight: "") {
+	@if $size != "" {
+		& {
+			font-size: map.get($font-sizes, $size);
+		}
+	}
+	@if $weight != "" {
+		& {
+			font-weight: $weight;
+		}
+	}
+	& {
+		line-height: $font-line-height;
+	}
+	@include media-query.sp {
+		@if $size != "" {
+			& {
+				font-size: map.get($font-sizes-app, $size);
+			}
+		}
+	}
+}

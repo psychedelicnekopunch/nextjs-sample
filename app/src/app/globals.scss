@@ -1,3 +1,7 @@
+
+@use "@/styles/mixins" as mixins;
+
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -81,8 +85,12 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  @include mixins.font($size: "medium", $weight: "");
+
+  & {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 }
 
 body {
