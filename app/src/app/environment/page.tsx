@@ -1,13 +1,14 @@
 
 import styles from "./page.module.scss";
 import Card from "@/components/layouts/card"
+import Ungroup from "@/assets/icon/ungroup.svg"
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div>
-        <h1><a href="https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables" target="_blank">Environment Variables</a></h1>
-        <h2><a href="https://github.com/vercel/next.js/tree/canary/examples/environment-variables" target="_blank">Environment Variables Example</a></h2>
+        <h1><a href="https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables" target="_blank">Environment Variables <Ungroup/></a></h1>
+        <h2><a href="https://github.com/vercel/next.js/tree/canary/examples/environment-variables" target="_blank">Environment Variables Example <Ungroup/></a></h2>
         <Card>
           サーバーレンダリングのみ使用可能<br/>
           process.env.TEST: { process.env.TEST }
