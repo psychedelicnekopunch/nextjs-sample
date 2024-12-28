@@ -115,8 +115,21 @@ a {
   }
 }
 
+svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+
+p {
+  @include mixins.padding($bottom: "large");
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+

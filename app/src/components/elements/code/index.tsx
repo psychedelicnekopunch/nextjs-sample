@@ -1,0 +1,44 @@
+
+"use client"
+
+import styles from "./styles.module.scss"
+import hljs from "highlight.js/lib/core"
+
+import bash from "highlight.js/lib/languages/bash"
+import javascript from "highlight.js/lib/languages/javascript"
+import typescript from "highlight.js/lib/languages/typescript"
+
+import "highlight.js/styles/monokai.css"
+
+
+type Props = {
+	lang: string,
+	name?: string,
+	value: string
+}
+
+export default function Code({ lang, name, value }: Props) {
+
+	hljs.registerLanguage('bash', bash)
+	hljs.registerLanguage('javascript', javascript)
+	hljs.registerLanguage('typescript', typescript)
+
+	const str = (name) ? `\n\n${value}` : value
+
+	const highlightedCode = hljs.highlight(
+		str,
+		{ language: lang }
+	).value
+
+	return (
+		<div className={styles.code}>
+			{ name &&
+				<div className={styles.name}>{name}</div>
+			}
+			<pre><code
+				className={`hljs language-bash`}
+				dangerouslySetInnerHTML={{ __html: highlightedCode }}
+			></code></pre>
+		</div>
+	)
+}

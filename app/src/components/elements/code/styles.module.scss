@@ -1,0 +1,34 @@
+@use "@/styles/mixins" as mixins;
+
+.code {
+	@include mixins.padding($bottom: "large");
+
+	& {
+		position: relative;
+	}
+
+	code {
+		@include mixins.border-radius($all: "medium");
+		@include mixins.padding($top: "xlarge");
+
+		& {
+			max-width: calc(100vw - 100px);
+			// width: 100%;
+			width: 600px;
+		}
+	}
+
+	.name {
+		@include mixins.color($bg: "dark-gray");
+		@include mixins.color($color: "white");
+		@include mixins.padding($all: "xsmall");
+		@include mixins.border-radius($bottom: "medium");
+		// @include mixins.padding($left: "xxsmall", $right: "xxsmall");
+
+		& {
+			position: absolute;
+			top: 0;
+			left: 10px;
+		}
+	}
+}

@@ -103,6 +103,19 @@ export default function Home() {
             環境変数の取り扱い
           </p>
         </Link>
+
+        <Link
+          href="/svg"
+          className={styles.card}
+          rel="noopener noreferrer"
+        >
+          <h2>
+            SVG <span>-&gt;</span>
+          </h2>
+          <p>
+            SVG ファイルの取り扱い
+          </p>
+        </Link>
       </div>
     </main>
   );
