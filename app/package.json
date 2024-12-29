@@ -1,37 +1,37 @@
 {
-  "name": "nextjs-sample",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "rm -f .env.local && cp .env.dev .env.local && next dev --turbopack",
-    "dev:stg": "rm -f .env.local && cp .env.stg .env.local && next dev --turbopack",
-    "build": "next build",
-    "build:dev": "rm -f .env.local && cp .env.dev .env.local && NODE_OPTIONS='--trace-deprecation' next build",
-    "build:stg": "rm -f .env.local && cp .env.stg .env.local && NODE_OPTIONS='--trace-deprecation' next build",
-    "build:prod": "rm -f .env.local && cp .env.prod .env.local && NODE_OPTIONS='--trace-deprecation' next build",
-    "start": "next start",
-    "lint": "next lint --no-cache",
-    "prettier": "npx prettier './**/*.{ts,tsx,json,scss}'",
-    "format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint",
-    "format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint"
-  },
-  "dependencies": {
-    "highlight.js": "^11.11.1",
-    "next": "15.0.2",
-    "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028",
-    "the-new-css-reset": "^1.11.3"
-  },
-  "devDependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "15.0.2",
-    "eslint-config-prettier": "^9.1.0",
-    "prettier": "3.4.2",
-    "sass": "^1.80.5",
-    "typescript": "^5"
-  }
+	"name": "nextjs-sample",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "rm -f .env.local && cp .env.dev .env.local && next dev --turbopack",
+		"dev:stg": "rm -f .env.local && cp .env.stg .env.local && next dev --turbopack",
+		"build": "next build",
+		"build:dev": "rm -f .env.local && cp .env.dev .env.local && NODE_OPTIONS='--trace-deprecation' next build",
+		"build:stg": "rm -f .env.local && cp .env.stg .env.local && NODE_OPTIONS='--trace-deprecation' next build",
+		"build:prod": "rm -f .env.local && cp .env.prod .env.local && NODE_OPTIONS='--trace-deprecation' next build",
+		"start": "next start",
+		"lint": "next lint --no-cache",
+		"prettier": "npx prettier './**/*.{ts,tsx,json,scss}'",
+		"format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint",
+		"format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint"
+	},
+	"dependencies": {
+		"highlight.js": "^11.11.1",
+		"next": "15.0.2",
+		"react": "19.0.0-rc-02c0e824-20241028",
+		"react-dom": "19.0.0-rc-02c0e824-20241028",
+		"the-new-css-reset": "^1.11.3"
+	},
+	"devDependencies": {
+		"@svgr/webpack": "^8.1.0",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"eslint": "^8.57.1",
+		"eslint-config-next": "15.0.2",
+		"eslint-config-prettier": "^9.1.0",
+		"prettier": "3.4.2",
+		"sass": "^1.80.5",
+		"typescript": "^5"
+	}
 }

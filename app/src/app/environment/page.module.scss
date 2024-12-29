@@ -1,22 +1,20 @@
-
 @use "@/styles/mixins" as mixins;
 
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6rem;
+	min-height: 100vh;
 
-  h1 {
-    @include mixins.padding($bottom: "large");
-    @include mixins.font($size: "xxlarge", $weight: "");
-  }
+	h1 {
+		@include mixins.padding($bottom: "large");
+		@include mixins.font($size: "xxlarge", $weight: "");
+	}
 
-  h2 {
-    @include mixins.padding($bottom: "large");
-    @include mixins.font($size: "large", $weight: "");
-  }
-
+	h2 {
+		@include mixins.padding($bottom: "large");
+		@include mixins.font($size: "large", $weight: "");
+	}
 }

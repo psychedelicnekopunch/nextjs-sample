@@ -16,17 +16,7 @@ $border-radius-sizes: (
 	0: 0,
 );
 
-@mixin border-radius(
-	$all: "",
-	$top: "",
-	$right: "",
-	$bottom: "",
-	$left: "",
-	$top-right: "",
-	$top-left: "",
-	$bottom-right: "",
-	$bottom-left: ""
-) {
+@mixin border-radius($all: "", $top: "", $right: "", $bottom: "", $left: "", $top-right: "", $top-left: "", $bottom-right: "", $bottom-left: "") {
 	@each $key, $value in $border-radius-sizes {
 		@if $all == $key {
 			& {

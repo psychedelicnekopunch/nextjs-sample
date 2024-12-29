@@ -63,18 +63,12 @@ $colors: (
 	}
 	@if $bg != "" {
 		& {
-			background-color: color.scale(
-				map.get($colors, $bg),
-				$lightness: 15%
-			);
+			background-color: color.scale(map.get($colors, $bg), $lightness: 15%);
 		}
 	}
 	@if $border != "" {
 		& {
-			border-color: color.scale(
-				map.get($colors, $border),
-				$lightness: 15%
-			);
+			border-color: color.scale(map.get($colors, $border), $lightness: 15%);
 		}
 	}
 }
@@ -88,18 +82,12 @@ $colors: (
 	}
 	@if $bg != "" {
 		& {
-			background-color: color.scale(
-				map.get($colors, $bg),
-				$lightness: -15%
-			);
+			background-color: color.scale(map.get($colors, $bg), $lightness: -15%);
 		}
 	}
 	@if $border != "" {
 		& {
-			border-color: color.scale(
-				map.get($colors, $border),
-				$lightness: -15%
-			);
+			border-color: color.scale(map.get($colors, $border), $lightness: -15%);
 		}
 	}
 }

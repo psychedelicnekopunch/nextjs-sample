@@ -10,17 +10,24 @@
 	code {
 		@include mixins.border-radius($all: "medium");
 		@include mixins.padding($top: "xlarge");
+		@include mixins.font($size: "small", $weight: "");
 
 		& {
 			max-width: calc(100vw - 100px);
 			// width: 100%;
 			width: 600px;
 			font-family: monospace;
+			tab-size: 4;
+			line-height: 130%;
 		}
 
-		> * {
-			@include mixins.font($size: "small", $weight: "");
-		}
+		// > * {
+		// 	@include mixins.font($size: "xsmall", $weight: "");
+
+		// 	& {
+		// 		line-height: 100%;
+		// 	}
+		// }
 	}
 
 	.name {
