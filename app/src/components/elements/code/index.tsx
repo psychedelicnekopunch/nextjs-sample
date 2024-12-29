@@ -1,11 +1,10 @@
 
-"use client"
-
 import styles from "./styles.module.scss"
 import hljs from "highlight.js/lib/core"
 
 import bash from "highlight.js/lib/languages/bash"
 import javascript from "highlight.js/lib/languages/javascript"
+import json from "highlight.js/lib/languages/json"
 import typescript from "highlight.js/lib/languages/typescript"
 
 import "highlight.js/styles/monokai.css"
@@ -21,6 +20,7 @@ export default function Code({ lang, name, value }: Props) {
 
 	hljs.registerLanguage('bash', bash)
 	hljs.registerLanguage('javascript', javascript)
+	hljs.registerLanguage('json', json)
 	hljs.registerLanguage('typescript', typescript)
 
 	const str = (name) ? `\n\n${value}` : value

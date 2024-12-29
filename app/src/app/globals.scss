@@ -124,7 +124,10 @@ svg {
 
 
 p {
-  @include mixins.padding($bottom: "large");
+  @include mixins.margin($bottom: "large");
+  &:last-child {
+    @include mixins.margin($bottom: "0");
+  }
 }
 
 @media (prefers-color-scheme: dark) {
