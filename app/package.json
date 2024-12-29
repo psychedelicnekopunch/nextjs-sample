@@ -6,11 +6,11 @@
     "dev": "rm -f .env.local && cp .env.dev .env.local && next dev --turbopack",
     "dev:stg": "rm -f .env.local && cp .env.stg .env.local && next dev --turbopack",
     "build": "next build",
-    "build:dev": "rm -f .env.local && cp .env.dev .env.local && next build",
-    "build:stg": "rm -f .env.local && cp .env.stg .env.local && next build",
-    "build:prod": "rm -f .env.local && cp .env.prod .env.local && next build",
+    "build:dev": "rm -f .env.local && cp .env.dev .env.local && NODE_OPTIONS='--trace-deprecation' next build",
+    "build:stg": "rm -f .env.local && cp .env.stg .env.local && NODE_OPTIONS='--trace-deprecation' next build",
+    "build:prod": "rm -f .env.local && cp .env.prod .env.local && NODE_OPTIONS='--trace-deprecation' next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --no-cache"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
@@ -24,7 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
+    "eslint": "^8.57.1",
     "eslint-config-next": "15.0.2",
     "sass": "^1.80.5",
     "typescript": "^5"

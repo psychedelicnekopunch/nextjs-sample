@@ -105,6 +105,19 @@ export default function Home() {
         </Link>
 
         <Link
+          href="/eslint"
+          className={styles.card}
+          rel="noopener noreferrer"
+        >
+          <h2>
+            ESLint <span>-&gt;</span>
+          </h2>
+          <p>
+            for TypeScript
+          </p>
+        </Link>
+
+        <Link
           href="/svg"
           className={styles.card}
           rel="noopener noreferrer"
