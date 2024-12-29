@@ -10,7 +10,10 @@
     "build:stg": "rm -f .env.local && cp .env.stg .env.local && NODE_OPTIONS='--trace-deprecation' next build",
     "build:prod": "rm -f .env.local && cp .env.prod .env.local && NODE_OPTIONS='--trace-deprecation' next build",
     "start": "next start",
-    "lint": "next lint --no-cache"
+    "lint": "next lint --no-cache",
+    "prettier": "npx prettier './**/*.{ts,tsx,json,scss}'",
+    "format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint",
+    "format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
@@ -26,6 +29,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.0.2",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.4.2",
     "sass": "^1.80.5",
     "typescript": "^5"
   }
