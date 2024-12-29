@@ -113,6 +113,7 @@ export default function Home() {
             ESLint <span>-&gt;</span>
           </h2>
           <p>
+            静的コード解析用ツール<br/>
             for TypeScript
           </p>
         </Link>

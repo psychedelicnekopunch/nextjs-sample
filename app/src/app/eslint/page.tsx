@@ -9,7 +9,7 @@ export default function ESLint() {
     <main className={styles.main}>
       <div>
         <h1>ESLint</h1>
-        <h2>for TypeScript</h2>
+        <h2>静的コード解析用ツール for TypeScript</h2>
         <Card>
           <p><a href="https://typescript-eslint.io/" target="_blank">typescript-eslint <Ungroup/></a></p>
           <Code
