@@ -15,6 +15,11 @@
 			max-width: calc(100vw - 100px);
 			// width: 100%;
 			width: 600px;
+			font-family: monospace;
+		}
+
+		> * {
+			@include mixins.font($size: "small", $weight: "");
 		}
 	}
 

@@ -6,6 +6,7 @@ import bash from "highlight.js/lib/languages/bash"
 import javascript from "highlight.js/lib/languages/javascript"
 import json from "highlight.js/lib/languages/json"
 import typescript from "highlight.js/lib/languages/typescript"
+import plaintext from "highlight.js/lib/languages/plaintext"
 
 import "highlight.js/styles/monokai.css"
 
@@ -22,6 +23,7 @@ export default function Code({ lang, name, value }: Props) {
 	hljs.registerLanguage('javascript', javascript)
 	hljs.registerLanguage('json', json)
 	hljs.registerLanguage('typescript', typescript)
+	hljs.registerLanguage('plaintext', plaintext)
 
 	const str = (name) ? `\n\n${value}` : value
 
