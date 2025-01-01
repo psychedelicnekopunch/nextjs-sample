@@ -50,6 +50,13 @@ export default function Home() {
 					<p>Instantly deploy your Next.js site to a shareable URL with Vercel.</p>
 				</a>
 
+				<Link href="/cookie" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Cookie <span>-&gt;</span>
+					</h2>
+					<p>for use client</p>
+				</Link>
+
 				<Link href="/environment" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Environment <span>-&gt;</span>
