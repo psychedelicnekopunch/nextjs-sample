@@ -1,0 +1,17 @@
+@use "@/styles/mixins" as mixins;
+
+.list {
+	&.disc {
+		@include mixins.padding($bottom: "large");
+		li {
+			@include mixins.padding($bottom: "xsmall");
+			@include mixins.margin($left: "medium");
+			& {
+				list-style-type: disc;
+			}
+			&:last-child {
+				@include mixins.padding($bottom: 0);
+			}
+		}
+	}
+}
