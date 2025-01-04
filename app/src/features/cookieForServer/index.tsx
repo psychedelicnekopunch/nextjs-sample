@@ -1,50 +1,36 @@
 "use client"
 
-import { useState as UseState, useEffect as UseEffect } from "react"
+import { useState as UseState } from "react"
 
 import CheckCircle from "@/assets/icon/check_circle.svg"
 import styles from "./styles.module.scss"
 import { Result } from "./repository"
 import Repository from "./repository"
 
+const repo = new Repository()
+
 enum ClassValueEnum {
 	Success = "success",
 	SuccessActive = "success-active",
 }
 
-const repo = new Repository()
+type Props = {
+	value: string
+}
 
-export default function cookieForClient() {
-	// const [didChange, setDidChange] = UseState(false)
-	// const [defaultInputValue, setDefaultInputValue] = UseState("")
-	const [inputValue, setInputValue] = UseState("")
-	const [resultValue, setResultValue] = UseState("")
+export default function cookieForServer({ value }: Props) {
+	const [inputValue, setInputValue] = UseState(value)
+	const [resultValue, setResultValue] = UseState(value)
 	const [classValue, setClassValue] = UseState(ClassValueEnum.Success)
-
-	async function initCookie() {
-		const res: Result<string> = await repo.get()
-		// setDefaultInputValue(res.data)
-		setInputValue(res.data)
-		setResultValue(res.data)
-		// console.log("init")
-		// console.log(res.data)
-	}
 
 	function changeValue(e: React.ChangeEvent<HTMLInputElement>) {
 		setInputValue(e.target.value)
-		// setDidChange(true)
 	}
 
 	async function clickSaveButton(e: React.MouseEvent<HTMLButtonElement>) {
 		e.preventDefault()
-
-		// const v: string = didChange ? inputValue : defaultInputValue
-		// const res: Result<null> = await repo.save(v)
-		// setResultValue(v)
-
 		const res: Result<null> = await repo.save(inputValue)
 		setResultValue(inputValue)
-
 		if (!res.error) setClassValue(ClassValueEnum.SuccessActive)
 		setTimeout(() => {
 			setClassValue(ClassValueEnum.Success)
@@ -53,33 +39,18 @@ export default function cookieForClient() {
 
 	async function clickDeleteButton(e: React.MouseEvent<HTMLButtonElement>) {
 		e.preventDefault()
-
 		const res: Result<null> = await repo.delete()
-
 		setResultValue("")
 		setInputValue("")
-
 		if (!res.error) setClassValue(ClassValueEnum.SuccessActive)
 		setTimeout(() => {
 			setClassValue(ClassValueEnum.Success)
 		}, 2000)
 	}
 
-	// useEffect(setup, dependencies?)
-	//
-	// - dependencies
-	// リアクティブな値のリスト。
-	// リアクティブな値には、props、state、コンポーネント本体に直接宣言されたすべての変数および関数が含まれます。
-	// この引数を省略すると、エフェクトはコンポーネントの毎回のレンダー後に再実行されます。
-	//
-	UseEffect(() => {
-		initCookie()
-	}, [resultValue])
-
 	return (
-		<form className={styles["cookie-for-client"]}>
-			<p>cookie.get(&quot;test&quot;) is {resultValue}</p>
-			{/*<input type="text" defaultValue={defaultInputValue} onChange={changeValue} />*/}
+		<form className={styles["cookie-for-server"]}>
+			<p>cookie.get(&quot;test2&quot;) is {resultValue}</p>
 			<input type="text" value={inputValue} onChange={changeValue} />
 			<span className={styles[classValue]}>
 				<CheckCircle />

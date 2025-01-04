@@ -1,5 +1,4 @@
-
-import Cookie from "@/infrastructure/cookie"
+import Cookie from "@/infrastructure/js-cookie"
 
 export type Result<T> = {
 	result: "success" | "failed"
