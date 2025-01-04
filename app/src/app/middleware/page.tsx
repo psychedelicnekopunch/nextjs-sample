@@ -21,7 +21,6 @@ export default function Middleware() {
 							<a href="https://nextjs.org/docs/app/api-reference/functions/next-request" target="_blank">
 								NextRequest - Next.js <Ungroup />
 							</a>
-
 						</li>
 						<li>
 							<a href="https://nextjs.org/docs/app/api-reference/functions/next-response" target="_blank">
@@ -30,20 +29,21 @@ export default function Middleware() {
 						</li>
 					</List>
 					<p>
-						/src 直下に middleware.ts を追加。<br/>
+						/src 直下に middleware.ts を追加。
+						<br />
 						/src 直下以外の場所だと動かない。
 					</p>
 					<Code
 						lang="ts"
-						value={
-`import { NextResponse } from "next/server"
+						name="/src/middleware.ts"
+						value={`import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 // This function can be marked 'async' if using 'await' inside
 export function middleware(request: NextRequest) {
 	const response = NextResponse.next()
 	console.log("==================")
-	console.log("middleware")
+	console.log("middleware ( " + request.url + " )")
 	console.log("==================")
 	return response
 }
@@ -58,8 +58,8 @@ export const config = {
 	 * - favicon.ico, sitemap.xml, robots.txt (metadata files)
 	 */
 	matcher: '/((?!api|assets|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
-}`
-					} />
+}`}
+					/>
 				</Card>
 			</div>
 		</main>

@@ -12,13 +12,13 @@ export default function Home() {
 				</p>
 				<div>
 					<a href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app" target="_blank" rel="noopener noreferrer">
-						By <Image src="/vercel.svg" alt="Vercel Logo" className={styles.vercelLogo} width={100} height={24} priority />
+						By <Image src="/assets/vercel.svg" alt="Vercel Logo" className={styles.vercelLogo} width={100} height={24} priority />
 					</a>
 				</div>
 			</div>
 
 			<div className={styles.center}>
-				<Image className={styles.logo} src="/next.svg" alt="Next.js Logo" width={180} height={37} priority />
+				<Image className={styles.logo} src="/assets/next.svg" alt="Next.js Logo" width={180} height={37} priority />
 			</div>
 
 			<div className={styles.grid}>
@@ -54,7 +54,14 @@ export default function Home() {
 					<h2>
 						Cookie <span>-&gt;</span>
 					</h2>
-					<p>for use client</p>
+					<p>for use client, Route Handlers, Server Actions, Middleware</p>
+				</Link>
+
+				<Link href="/dynamic_routes/123" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Dynamic Routes <span>-&gt;</span>
+					</h2>
+					<p>/dynamic_routes/:id</p>
 				</Link>
 
 				<Link href="/environment" className={styles.card} rel="noopener noreferrer">
@@ -73,6 +80,13 @@ export default function Home() {
 						<br />
 						for TypeScript
 					</p>
+				</Link>
+
+				<Link href="/middleware" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Middleware <span>-&gt;</span>
+					</h2>
+					<p>ミドルウェア</p>
 				</Link>
 
 				<Link href="/prettier" className={styles.card} rel="noopener noreferrer">
