@@ -28,7 +28,7 @@ export default async function Cookie() {
 					<Code lang="bash" value={`$ npm install js-cookie @types/js-cookie --save`} />
 					<CookieForClient />
 				</Card>
-				<h2>Route Handlers, Server Actions</h2>
+				<h2>Server Component, Server Actions</h2>
 				<Card>
 					<p>
 						<a href="https://nextjs.org/docs/app/api-reference/functions/cookies" target="_blank">

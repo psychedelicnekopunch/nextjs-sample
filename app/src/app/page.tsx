@@ -54,7 +54,7 @@ export default function Home() {
 					<h2>
 						Cookie <span>-&gt;</span>
 					</h2>
-					<p>for use client, Route Handlers, Server Actions, Middleware</p>
+					<p>for use client, Server Component, Server Actions, Middleware</p>
 				</Link>
 
 				<Link href="/dynamic_routes/123" className={styles.card} rel="noopener noreferrer">
