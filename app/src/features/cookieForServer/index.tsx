@@ -9,7 +9,7 @@ import Repository from "./repository"
 
 const repo = new Repository()
 
-enum ClassValueEnum {
+enum StyleEnum {
 	Success = "success",
 	SuccessActive = "success-active",
 }
@@ -21,7 +21,7 @@ type Props = {
 export default function cookieForServer({ value }: Props) {
 	const [inputValue, setInputValue] = UseState(value)
 	const [resultValue, setResultValue] = UseState(value)
-	const [classValue, setClassValue] = UseState(ClassValueEnum.Success)
+	const [style, setStyle] = UseState(StyleEnum.Success)
 
 	function changeValue(e: React.ChangeEvent<HTMLInputElement>) {
 		setInputValue(e.target.value)
@@ -31,9 +31,9 @@ export default function cookieForServer({ value }: Props) {
 		e.preventDefault()
 		const res: Result<null> = await repo.save(inputValue)
 		setResultValue(inputValue)
-		if (!res.error) setClassValue(ClassValueEnum.SuccessActive)
+		if (!res.error) setStyle(StyleEnum.SuccessActive)
 		setTimeout(() => {
-			setClassValue(ClassValueEnum.Success)
+			setStyle(StyleEnum.Success)
 		}, 2000)
 	}
 
@@ -42,9 +42,9 @@ export default function cookieForServer({ value }: Props) {
 		const res: Result<null> = await repo.delete()
 		setResultValue("")
 		setInputValue("")
-		if (!res.error) setClassValue(ClassValueEnum.SuccessActive)
+		if (!res.error) setStyle(StyleEnum.SuccessActive)
 		setTimeout(() => {
-			setClassValue(ClassValueEnum.Success)
+			setStyle(StyleEnum.Success)
 		}, 2000)
 	}
 
@@ -52,7 +52,7 @@ export default function cookieForServer({ value }: Props) {
 		<form className={styles["cookie-for-server"]}>
 			<p>cookie.get(&quot;test2&quot;) is {resultValue}</p>
 			<input type="text" value={inputValue} onChange={changeValue} />
-			<span className={styles[classValue]}>
+			<span className={styles[style]}>
 				<CheckCircle />
 			</span>
 			<br />

@@ -7,7 +7,7 @@ import styles from "./styles.module.scss"
 import { Result } from "./repository"
 import Repository from "./repository"
 
-enum ClassValueEnum {
+enum StyleEnum {
 	Success = "success",
 	SuccessActive = "success-active",
 }
@@ -19,7 +19,7 @@ export default function cookieForClient() {
 	// const [defaultInputValue, setDefaultInputValue] = UseState("")
 	const [inputValue, setInputValue] = UseState("")
 	const [resultValue, setResultValue] = UseState("")
-	const [classValue, setClassValue] = UseState(ClassValueEnum.Success)
+	const [style, setStyle] = UseState(StyleEnum.Success)
 
 	async function initCookie() {
 		const res: Result<string> = await repo.get()
@@ -45,9 +45,9 @@ export default function cookieForClient() {
 		const res: Result<null> = await repo.save(inputValue)
 		setResultValue(inputValue)
 
-		if (!res.error) setClassValue(ClassValueEnum.SuccessActive)
+		if (!res.error) setStyle(StyleEnum.SuccessActive)
 		setTimeout(() => {
-			setClassValue(ClassValueEnum.Success)
+			setStyle(StyleEnum.Success)
 		}, 2000)
 	}
 
@@ -59,9 +59,9 @@ export default function cookieForClient() {
 		setResultValue("")
 		setInputValue("")
 
-		if (!res.error) setClassValue(ClassValueEnum.SuccessActive)
+		if (!res.error) setStyle(StyleEnum.SuccessActive)
 		setTimeout(() => {
-			setClassValue(ClassValueEnum.Success)
+			setStyle(StyleEnum.Success)
 		}, 2000)
 	}
 
@@ -81,7 +81,7 @@ export default function cookieForClient() {
 			<p>cookie.get(&quot;test&quot;) is {resultValue}</p>
 			{/*<input type="text" defaultValue={defaultInputValue} onChange={changeValue} />*/}
 			<input type="text" value={inputValue} onChange={changeValue} />
-			<span className={styles[classValue]}>
+			<span className={styles[style]}>
 				<CheckCircle />
 			</span>
 			<br />
