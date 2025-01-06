@@ -23,7 +23,7 @@ export default function CompA({ onInitialized, onChange, onClick, reactiveText }
 
 	function clickButton(e: React.MouseEvent<HTMLButtonElement>): void {
 		e.preventDefault()
-		onClick(`from Comp A: ${reactiveText}`)
+		onClick(`from Comp A => ${reactiveText}`)
 	}
 
 	function clickInitializedButton(e: React.MouseEvent<HTMLButtonElement>): void {

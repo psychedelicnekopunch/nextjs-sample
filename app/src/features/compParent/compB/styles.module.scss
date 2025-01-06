@@ -1,6 +1,13 @@
 @use "@/styles/mixins" as mixins;
 
 .comp-b {
+	.var {
+		@include mixins.color($bg: "light-gray", $color: "dark-gray");
+		@include mixins.font($size: "small");
+		@include mixins.padding($all: "xsmall");
+		@include mixins.margin($right: "medium");
+	}
+
 	.success,
 	.success-active {
 		@include mixins.font($size: "large");

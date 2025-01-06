@@ -78,25 +78,25 @@ export default function CompB({ initialized, text, reactiveText, methods }: Prop
 			<p>Comp B</p>
 			<List type="border">
 				<li>
-					<span>initialized: </span>
+					<span className={styles.var}>initialized</span>
 					<span>{initialized ? "true" : "false"}</span>
 					<span className={styles[initializedStyle]}>
 						<CheckCircle /> initialized!
 					</span>
 				</li>
 				<li>
-					<span>text: </span>
+					<span className={styles.var}>text</span>
 					<span>{text}</span>
 					<span className={styles[receivedTextStyle]}>
 						<CheckCircle /> received!
 					</span>
 				</li>
 				<li>
-					<span>reactiveText: </span>
+					<span className={styles.var}>reactiveText</span>
 					<span>{reactiveText}</span>
 				</li>
 				<li>
-					<span>methods: </span>
+					<span className={styles.var}>methods</span>
 					<span className={styles[doSomethingStyle]}>
 						<CheckCircle /> Do Something!
 					</span>

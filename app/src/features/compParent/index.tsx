@@ -14,6 +14,7 @@ type Props = {
 export default function CompParent({ children }: Props) {
 	const [initialized, setInitialized] = UseState(false)
 	const [text, setText] = UseState("")
+	const [count, setCount] = UseState(0)
 	const [reactiveText, setReactiveText] = UseState("")
 	const [methods, setMethods] = UseState<Methods>({
 		doSomething: (): void => {},
@@ -27,12 +28,14 @@ export default function CompParent({ children }: Props) {
 		}
 		setInitialized(true)
 		setReactiveText("")
-		setText("from Comp Parent: initialized")
+		setText("from Comp Parent => initialized")
 		// console.log("initialized")
 	}
 
-	function initB(): void {
-		console.log("initB")
+	function countUp(): void {
+		// console.log("countUp")
+		const i = count + 1
+		setCount(i)
 	}
 
 	function initMethods(methods: Methods): void {
@@ -61,13 +64,14 @@ export default function CompParent({ children }: Props) {
 	}, [initialized])
 
 	UseEffect(() => {
-		initB()
+		countUp()
 	}, [text])
 
 	return (
 		<div className={styles["comp-parent"]}>
 			<Card color="superlight-gray" hasShadow={false}>
 				<p>Comp Parent</p>
+				<p>text の変更によるレンダリング回数は{count}回です。</p>
 				<div className={styles.section}>
 					<Card hasShadow={false}>
 						<CompA onInitialized={onInitialized} onChange={onChange} onClick={onClick} reactiveText={reactiveText} />
