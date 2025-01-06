@@ -103,6 +103,13 @@ export default function Home() {
 					<p>コードフォーマッター</p>
 				</Link>
 
+				<Link href="/query_params?a=1&a=2&b=3&b=4" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Query Params <span>-&gt;</span>
+					</h2>
+					<p>クエリ文字列</p>
+				</Link>
+
 				<Link href="/svg" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						SVG <span>-&gt;</span>

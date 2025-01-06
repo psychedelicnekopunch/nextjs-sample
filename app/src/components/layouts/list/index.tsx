@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss"
 
 type Props = {
-	type?: "border" | "disc" | "number"
+	type?: "border" | "disc" | "number" | "none"
 	children: React.ReactNode
 }
 
