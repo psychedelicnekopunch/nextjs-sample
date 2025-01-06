@@ -16,7 +16,7 @@ enum StyleEnum {
 
 const repo = new Repository()
 
-export default function cookieForClient() {
+export default function CookieForClient() {
 	// const [didChange, setDidChange] = UseState(false)
 	// const [defaultInputValue, setDefaultInputValue] = UseState("")
 	const [inputValue, setInputValue] = UseState("")

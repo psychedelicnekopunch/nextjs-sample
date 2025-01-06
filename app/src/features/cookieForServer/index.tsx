@@ -20,7 +20,7 @@ type Props = {
 
 const repo = new Repository()
 
-export default function cookieForServer({ value }: Props) {
+export default function CookieForServer({ value }: Props) {
 	const [inputValue, setInputValue] = UseState(value)
 	const [resultValue, setResultValue] = UseState(value)
 	const [style, setStyle] = UseState(StyleEnum.Success)
