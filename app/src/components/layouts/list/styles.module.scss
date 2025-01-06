@@ -14,4 +14,32 @@
 			}
 		}
 	}
+	&.number {
+		@include mixins.padding($bottom: "large");
+		li {
+			@include mixins.padding($bottom: "xsmall");
+			@include mixins.margin($left: "medium");
+			& {
+				list-style-type: number;
+			}
+			&:last-child {
+				@include mixins.padding($bottom: 0);
+			}
+		}
+	}
+	&.border {
+		@include mixins.padding($bottom: "large");
+		li {
+			@include mixins.border($bottom: "medium");
+			@include mixins.padding($top: "medium", $bottom: "medium");
+			// @include mixins.margin($left: "medium");
+			// & {
+			// 	list-style-type: number;
+			// }
+			&:last-child {
+				// @include mixins.padding($bottom: 0);
+				@include mixins.border($bottom: 0);
+			}
+		}
+	}
 }

@@ -7,6 +7,7 @@ $border-brightness: (
 	"medium": $border-medium,
 	"dark": $border-dark,
 	"0": 0,
+	0: 0,
 );
 
 @mixin border($all: "", $top: "", $right: "", $bottom: "", $left: "") {
