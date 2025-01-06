@@ -2,10 +2,12 @@
 
 import { useState as UseState, useEffect as UseEffect } from "react"
 
+import type { Result } from "./repository"
+import Repository from "./repository"
+import Input from "@/components/elements/input"
+import Button from "@/components/layouts/button"
 import CheckCircle from "@/assets/icon/check_circle.svg"
 import styles from "./styles.module.scss"
-import { Result } from "./repository"
-import Repository from "./repository"
 
 enum StyleEnum {
 	Success = "success",
@@ -80,17 +82,17 @@ export default function cookieForClient() {
 		<form className={styles["cookie-for-client"]}>
 			<p>cookie.get(&quot;test&quot;) is {resultValue}</p>
 			{/*<input type="text" defaultValue={defaultInputValue} onChange={changeValue} />*/}
-			<input type="text" value={inputValue} onChange={changeValue} />
+			<Input type="text" value={inputValue} onChange={changeValue} />
 			<span className={styles[style]}>
 				<CheckCircle />
 			</span>
 			<br />
-			<button className={styles.primary} onClick={clickSaveButton}>
+			<Button color="primary" onClick={clickSaveButton}>
 				save in 5min
-			</button>
-			<button className={styles.light} onClick={clickDeleteButton}>
+			</Button>
+			<Button color="light" onClick={clickDeleteButton}>
 				delete
-			</button>
+			</Button>
 		</form>
 	)
 }

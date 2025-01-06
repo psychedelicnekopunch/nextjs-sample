@@ -1,11 +1,12 @@
 "use client"
 
 import { useState as UseState, useEffect as UseEffect } from "react"
-
-import styles from "./styles.module.scss"
+import Button from "@/components/layouts/button"
+import Card from "@/components/layouts/card"
 import CompA from "./compA"
 import type { Methods } from "./compB"
 import CompB from "./compB"
+import styles from "./styles.module.scss"
 
 type Props = {
 	children: React.ReactNode
@@ -50,7 +51,7 @@ export default function CompParent({ children }: Props) {
 		setInitialized(!initialized)
 	}
 
-	function doSomething(): void {
+	function doSomething(_: React.MouseEvent<HTMLButtonElement>): void {
 		// console.log(methods)
 		methods.doSomething()
 	}
@@ -65,19 +66,28 @@ export default function CompParent({ children }: Props) {
 
 	return (
 		<div className={styles["comp-parent"]}>
-			<p>Comp Parent</p>
-			<div className={styles.section}>
-				<CompA onInitialized={onInitialized} onChange={onChange} onClick={onClick} reactiveText={reactiveText} />
-			</div>
-			<div className={styles.section}>
-				<CompB initialized={initialized} text={text} reactiveText={reactiveText} methods={initMethods} />
-			</div>
-			<div className={styles.section}>
-				<button className={styles.primary} onClick={doSomething}>
-					Do Something
-				</button>
-			</div>
-			<div className={styles.section}>{children}</div>
+			<Card color="superlight-gray" hasShadow={false}>
+				<p>Comp Parent</p>
+				<div className={styles.section}>
+					<Card hasShadow={false}>
+						<CompA onInitialized={onInitialized} onChange={onChange} onClick={onClick} reactiveText={reactiveText} />
+					</Card>
+				</div>
+				<div className={styles.section}>
+					<Card hasShadow={false}>
+						<CompB initialized={initialized} text={text} reactiveText={reactiveText} methods={initMethods} />
+					</Card>
+				</div>
+				<div className={styles.section}>
+					<Button color="primary" onClick={doSomething}>
+						Do Something
+					</Button>
+				</div>
+				<div className={`${styles.section} ${styles.hr}`}>
+					<p>children</p>
+					{children}
+				</div>
+			</Card>
 		</div>
 	)
 }

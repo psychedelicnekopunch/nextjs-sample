@@ -1,6 +1,8 @@
 "use client"
 
 // import { useState as UseState, useEffect as UseEffect } from "react"
+import Input from "@/components/elements/input"
+import Button from "@/components/layouts/button"
 import styles from "./styles.module.scss"
 
 type Props = {
@@ -32,14 +34,14 @@ export default function CompA({ onInitialized, onChange, onClick, reactiveText }
 	return (
 		<form className={styles["comp-a"]}>
 			<p>Comp A</p>
-			<input type="text" value={reactiveText} onChange={onChangeValue} />
+			<Input type="text" value={reactiveText} onChange={onChangeValue} />
 			<br />
-			<button className={styles.primary} onClick={clickButton}>
+			<Button color="primary" onClick={clickButton}>
 				send to Comp B
-			</button>
-			<button className={styles.light} onClick={clickInitializedButton}>
+			</Button>
+			<Button color="light" onClick={clickInitializedButton}>
 				initialized
-			</button>
+			</Button>
 		</form>
 	)
 }

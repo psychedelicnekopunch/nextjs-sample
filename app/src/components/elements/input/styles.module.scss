@@ -1,0 +1,11 @@
+@use "@/styles/mixins" as mixins;
+
+.input {
+	&[type="text"] {
+		@include mixins.font($size: "large");
+		@include mixins.padding($all: "small");
+		@include mixins.margin($bottom: "large");
+		@include mixins.border($all: "dark");
+		@include mixins.border-radius($all: "medium");
+	}
+}

@@ -1,9 +1,17 @@
 @use "@/styles/mixins" as mixins;
 
 .card {
-	@include mixins.color($bg: "white");
 	@include mixins.padding($all: "large");
 	@include mixins.border-radius($all: "large");
-	@include mixins.box-shadow($size: "large");
 	@include mixins.margin($bottom: "large");
+
+	&.has-shadow {
+		@include mixins.box-shadow($size: "large");
+	}
+	&.white {
+		@include mixins.color($bg: "white");
+	}
+	&.superlight-gray {
+		@include mixins.color($bg: "superlight-gray");
+	}
 }
