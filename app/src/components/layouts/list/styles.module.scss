@@ -27,6 +27,19 @@
 			}
 		}
 	}
+	&.hyphen {
+		@include mixins.padding($bottom: "large");
+		li {
+			@include mixins.padding($left: "xsmall", $bottom: "xsmall");
+			@include mixins.margin($left: "medium");
+			& {
+				list-style-type: "-";
+			}
+			&:last-child {
+				@include mixins.padding($bottom: 0);
+			}
+		}
+	}
 	&.border {
 		@include mixins.padding($bottom: "large");
 		li {
@@ -47,5 +60,9 @@
 				@include mixins.border($bottom: 0);
 			}
 		}
+	}
+
+	> li .list {
+		@include mixins.padding($top: "medium", $bottom: "medium");
 	}
 }

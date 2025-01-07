@@ -19,21 +19,22 @@ export default function URLsQueryStrings() {
 	const pathname = usePathname()
 	const router = useRouter()
 	const searchParams = useSearchParams()
-	const queryString = searchParams.toString()
+	const queryString = searchParams ? searchParams.toString() : ""
 
-	const [lists, setLists] = UseState([])
+	const [lists, setLists] = UseState<string[]>([])
 	const [inputKey, setInputKey] = UseState("")
 	const [inputValue, setInputValue] = UseState("")
 	const [style, setStyle] = UseState(StyleEnum.Success)
 
 	function init(): void {
 		const params = new URLSearchParams(queryString)
-		let arr = []
+		const arr: string[] = []
 		// searchParams.forEach((value, key) => {
 		// 	arr.push(`${key}: ${value}`)
 		// })
 		for (const [key, value] of params.entries()) {
-			arr = [...arr, `${key}: ${value}`]
+			// arr = [...arr, `${key}: ${value}`]
+			arr.push(`${key}: ${value}`)
 		}
 		setLists(arr)
 	}
@@ -58,7 +59,8 @@ export default function URLsQueryStrings() {
 		// searchParams.append(inputKey, inputValue)
 
 		const params = new URLSearchParams(searchParams.toString())
-		params.set(inputKey, inputValue)
+		params.append(inputKey, inputValue)
+		// params.set(inputKey, inputValue)
 
 		setStyle(StyleEnum.SuccessActive)
 		setTimeout(() => {
@@ -68,19 +70,27 @@ export default function URLsQueryStrings() {
 		router.push(`${pathname}?${params.toString()}`)
 	}
 
-	async function clickDeleteButton(e: React.MouseEvent<HTMLButtonElement>): void {
+	function clickDeleteButton(e: React.MouseEvent<HTMLButtonElement>): void {
 		e.preventDefault()
 
 		// Error: Method unavailable on `ReadonlyURLSearchParams`.
 		// Read more: https://nextjs.org/docs/app/api-reference/functions/use-search-params#updating-searchparams
 		// searchParams.delete(inputKey)
 
+		let path = pathname
+
+		if (inputKey) {
+			const params = new URLSearchParams(searchParams.toString())
+			params.delete(inputKey)
+			path = `${path}?${params.toString()}`
+		}
+
 		setStyle(StyleEnum.SuccessActive)
 		setTimeout(() => {
 			setStyle(StyleEnum.Success)
 		}, 2000)
 
-		router.push(pathname)
+		router.push(path)
 	}
 
 	UseEffect(() => {
