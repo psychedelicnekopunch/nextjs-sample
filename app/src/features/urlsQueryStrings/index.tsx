@@ -19,7 +19,7 @@ export default function URLsQueryStrings() {
 	const pathname = usePathname()
 	const router = useRouter()
 	const searchParams = useSearchParams()
-	const queryString = searchParams ? searchParams.toString() : ""
+	const queryString = searchParams.toString()
 
 	const [lists, setLists] = UseState<string[]>([])
 	const [inputKey, setInputKey] = UseState("")
