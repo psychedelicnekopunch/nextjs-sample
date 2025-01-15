@@ -89,6 +89,13 @@ export default function Home() {
 					</p>
 				</Link>
 
+				<Link href="/hooks" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Hooks <span>-&gt;</span>
+					</h2>
+					<p>React Hooks</p>
+				</Link>
+
 				<Link href="/middleware" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Middleware <span>-&gt;</span>

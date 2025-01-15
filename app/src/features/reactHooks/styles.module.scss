@@ -1,0 +1,20 @@
+@use "@/styles/mixins" as mixins;
+
+.cookie-for-client {
+	.success,
+	.success-active {
+		@include mixins.font($size: "large");
+		@include mixins.color($color: "success");
+		@include mixins.padding($left: "medium");
+	}
+
+	.success {
+		transition: opacity 0.1s;
+		opacity: 0%;
+	}
+
+	.success-active {
+		transition: opacity 0.1s;
+		opacity: 1;
+	}
+}
