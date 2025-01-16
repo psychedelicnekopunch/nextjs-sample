@@ -117,6 +117,13 @@ export default function Home() {
 					<p>クエリ文字列</p>
 				</Link>
 
+				<Link href="/stylelint" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Stylelint <span>-&gt;</span>
+					</h2>
+					<p>CSS コードフォーマッター</p>
+				</Link>
+
 				<Link href="/svg" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						SVG <span>-&gt;</span>

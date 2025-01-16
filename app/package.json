@@ -10,10 +10,10 @@
 		"build:stg": "rm -f .env.local && cp .env.stg .env.local && NODE_OPTIONS='--trace-deprecation' next build",
 		"build:prod": "rm -f .env.local && cp .env.prod .env.local && NODE_OPTIONS='--trace-deprecation' next build",
 		"start": "next start",
-		"lint": "next lint --no-cache",
+		"lint": "next lint --no-cache && stylelint \"**/*.scss\" --color",
 		"prettier": "npx prettier './**/*.{ts,tsx,json,scss}'",
-		"format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint",
-		"format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint"
+		"format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color",
+		"format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color"
 	},
 	"dependencies": {
 		"@types/js-cookie": "^3.0.6",
@@ -34,6 +34,8 @@
 		"eslint-config-prettier": "^9.1.0",
 		"prettier": "3.4.2",
 		"sass": "^1.80.5",
+		"stylelint": "^16.13.2",
+		"stylelint-config-recommended-scss": "^14.1.0",
 		"typescript": "^5"
 	},
 	"browserslist": [
