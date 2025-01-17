@@ -96,6 +96,13 @@ export default function Home() {
 					<p>React Hooks</p>
 				</Link>
 
+				<Link href="/load_external_js" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Load External JS <span>-&gt;</span>
+					</h2>
+					<p>外部 JS の読み込み</p>
+				</Link>
+
 				<Link href="/middleware" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Middleware <span>-&gt;</span>
