@@ -37,8 +37,5 @@
 		"stylelint": "^16.13.2",
 		"stylelint-config-recommended-scss": "^14.1.0",
 		"typescript": "^5"
-	},
-	"browserslist": [
-		"defaults"
-	]
+	}
 }
