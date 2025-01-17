@@ -127,7 +127,7 @@ export default function URLsQueryStrings() {
 				</List>
 			</Card>
 			<form>
-				<List type="none">
+				<List type="border">
 					<li>
 						key: <Input type="text" value={inputKey} onChange={changeKey} />
 					</li>

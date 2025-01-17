@@ -46,7 +46,7 @@
 			@include mixins.border($bottom: "medium");
 			@include mixins.padding($top: "medium", $bottom: "medium");
 			&:last-child {
-				// @include mixins.padding($bottom: 0);
+				@include mixins.padding($bottom: 0);
 				@include mixins.border($bottom: 0);
 			}
 		}
@@ -54,10 +54,9 @@
 	&.none {
 		@include mixins.padding($bottom: "large");
 		li {
-			@include mixins.border($bottom: "medium");
 			@include mixins.padding($top: "medium", $bottom: "medium");
 			&:last-child {
-				@include mixins.border($bottom: 0);
+				@include mixins.padding($bottom: 0);
 			}
 		}
 	}

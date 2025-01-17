@@ -2,6 +2,10 @@
 
 import Script from "next/script"
 
+declare class Chart {
+	constructor(target: HTMLElement, option: object)
+}
+
 export default function NextScript(): React.ReactNode {
 	function onLoad() {
 		console.log("onLoad")
