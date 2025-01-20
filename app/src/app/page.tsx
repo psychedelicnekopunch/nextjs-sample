@@ -117,6 +117,13 @@ export default function Home() {
 					<p>コードフォーマッター</p>
 				</Link>
 
+				<Link href="/statically_typed_links" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Statically Typed Links <span>-&gt;</span>
+					</h2>
+					<p>Using next/link, improving type safety when navigating between pages.</p>
+				</Link>
+
 				<Link href="/query_params?a=1&a=2&b=3&b=4" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Query Params <span>-&gt;</span>

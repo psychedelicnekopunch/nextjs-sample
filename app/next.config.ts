@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
 				},
 			},
 		},
+		// supported by Next.js with Turbopack:
+		// - Unsupported Next.js configuration option(s)
+		// To use Turbopack, remove the following configuration options:
+		// - experimental.typedRoutes
+		//
+		// typedRoutes: true,
 	},
 	webpack(config) {
 		// config.module.rules.push({
