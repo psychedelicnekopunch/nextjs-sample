@@ -29,9 +29,7 @@ const nextConfig: NextConfig = {
 export default nextConfig
 `}
 					/>
-					<p>
-						Turbopack では対応してないらしいので使えない。
-					</p>
+					<p>Turbopack では対応してないらしいので使えない。</p>
 					<Code
 						lang="bash"
 						value={`supported by Next.js with Turbopack:
