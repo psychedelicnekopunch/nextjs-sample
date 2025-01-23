@@ -49,7 +49,7 @@ export default async function Page() {
 					/>
 					<p>set(), delete()</p>
 					<Code
-						lang="jsx"
+						lang="ts"
 						name="repository.ts"
 						value={`"use server"
 
@@ -67,7 +67,7 @@ export async function remove() {
 }`}
 					/>
 					<Code
-						lang="jsx"
+						lang="ts"
 						name="someComponent.tsx"
 						value={`"use client"
 
@@ -108,7 +108,7 @@ export default function someComponent() {
 						</li>
 					</List>
 					<Code
-						lang="jsx"
+						lang="ts"
 						name="middleware.ts"
 						value={`import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"

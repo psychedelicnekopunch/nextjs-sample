@@ -61,9 +61,9 @@ NEXT_PUBLIC_TEST=prod`}
 					/>
 				</Card>
 				<Card>
-					<p>サーバーレンダリングのみ使用可能</p>
+					<p>Server Components</p>
 					<Code
-						lang="jsx"
+						lang="ts"
 						value={`return (
 	<>
 		process.env.TEST: { process.env.TEST }
@@ -78,9 +78,9 @@ NEXT_PUBLIC_TEST=prod`}
 					</p>
 				</Card>
 				<Card>
-					<p>&quot;use client&quot; で使用する場合、先頭に NEXT_PUBLIC_ をつける。</p>
+					<p>Client Components で使用する場合、先頭に NEXT_PUBLIC_ をつける。</p>
 					<Code
-						lang="jsx"
+						lang="ts"
 						value={`"use client"
 
 return (

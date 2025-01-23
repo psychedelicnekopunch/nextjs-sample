@@ -76,7 +76,7 @@ const nextConfig: NextConfig = {
 export default nextConfig`}
 					/>
 					<Code
-						lang="tsx"
+						lang="ts"
 						name="page.tsx"
 						value={`import SentimentSatisfied from "@/assets/icon/sentiment_satisfied.svg"
 
