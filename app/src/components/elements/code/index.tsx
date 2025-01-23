@@ -10,20 +10,25 @@ import xml from "highlight.js/lib/languages/xml"
 
 import "highlight.js/styles/monokai.css"
 
+hljs.registerLanguage("bash", bash)
+hljs.registerLanguage("javascript", javascript)
+hljs.registerLanguage("json", json)
+hljs.registerLanguage("typescript", typescript)
+hljs.registerLanguage("plaintext", plaintext)
+hljs.registerLanguage("xml", xml)
+
 type Props = {
-	lang: string
+	lang: "bash" | "js" | "json" | "ts" | "txt"
 	name?: string
 	value: string
 }
 
-export default function Code({ lang, name, value }: Props) {
-	hljs.registerLanguage("bash", bash)
-	hljs.registerLanguage("javascript", javascript)
-	hljs.registerLanguage("json", json)
-	hljs.registerLanguage("typescript", typescript)
-	hljs.registerLanguage("plaintext", plaintext)
-	hljs.registerLanguage("xml", xml)
+// テスト用
+export function registeredLangs(): string[] {
+	return hljs.listLanguages()
+}
 
+export default function Code({ lang, name, value }: Props) {
 	const str = name ? `\n\n${value}` : value
 	const highlightedCode = hljs.highlight(str, { language: lang }).value
 

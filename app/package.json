@@ -14,6 +14,7 @@
 		"prettier": "npx prettier './**/*.{ts,tsx,json,scss}'",
 		"format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color",
 		"format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color",
+		"pre:commit": "npm run format && jest",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},
