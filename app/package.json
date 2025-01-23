@@ -13,7 +13,9 @@
 		"lint": "next lint --no-cache && stylelint \"**/*.scss\" --color",
 		"prettier": "npx prettier './**/*.{ts,tsx,json,scss}'",
 		"format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color",
-		"format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color"
+		"format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color",
+		"test": "jest",
+		"test:watch": "jest --watch"
 	},
 	"dependencies": {
 		"@types/js-cookie": "^3.0.6",
@@ -26,16 +28,22 @@
 	},
 	"devDependencies": {
 		"@svgr/webpack": "^8.1.0",
+		"@testing-library/dom": "^10.4.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.2.0",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
 		"eslint": "^8.57.1",
 		"eslint-config-next": "15.0.2",
 		"eslint-config-prettier": "^9.1.0",
+		"jest": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
 		"prettier": "3.4.2",
 		"sass": "^1.80.5",
 		"stylelint": "^16.13.2",
 		"stylelint-config-recommended-scss": "^14.1.0",
+		"ts-node": "^10.9.2",
 		"typescript": "^5"
 	}
 }
