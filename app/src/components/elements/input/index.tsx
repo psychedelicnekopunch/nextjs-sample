@@ -9,5 +9,5 @@ type Props = {
 type Type = "text"
 
 export default function Input({ value, type = "text", onChange }: Props) {
-	return <input className={styles.input} type={type} value={value} onChange={onChange} />
+	return <input data-testid="input" className={styles.input} type={type} value={value} onChange={onChange} />
 }
