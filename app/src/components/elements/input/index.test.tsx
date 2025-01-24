@@ -1,6 +1,6 @@
 import { describe, jest, expect, test } from "@jest/globals"
 import "@testing-library/jest-dom"
-import { render, screen, fireEvent } from "@testing-library/react"
+import { render, fireEvent } from "@testing-library/react"
 import Input from "./index"
 
 describe("/components › /elements › <Input>", () => {
@@ -18,7 +18,7 @@ describe("/components › /elements › <Input>", () => {
 	test("onChange() が呼ばれるかどうか", () => {
 		const onChange = jest.fn()
 
-		let value = ""
+		const value = ""
 		const { getByTestId } = render(<Input value={value} onChange={onChange} />)
 		fireEvent.change(getByTestId("input"), { target: { value: "v" } })
 		expect(onChange).toBeCalled()
