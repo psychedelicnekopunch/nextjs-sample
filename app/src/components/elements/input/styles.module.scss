@@ -8,4 +8,26 @@
 		@include mixins.border($all: "dark");
 		@include mixins.border-radius($all: "medium");
 	}
+	&[type="file"] {
+		display: none;
+	}
+}
+
+.label {
+	&-upload {
+		// @include mixins.font($size: "large");
+		@include mixins.color($bg: "superlight-gray");
+		@include mixins.padding($top: "medium", $right: "small", $bottom: "medium", $left: "small");
+		@include mixins.margin($bottom: "large");
+		@include mixins.border($all: "medium");
+		@include mixins.border-radius($all: "large");
+		& {
+			display: inline-block;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			&:hover {
+				@include mixins.lightColor($bg: "white");
+			}
+		}
+	}
 }
