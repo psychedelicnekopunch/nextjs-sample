@@ -2,12 +2,13 @@ import { describe, expect, test } from "@jest/globals"
 import "@testing-library/jest-dom"
 import { render, screen } from "@testing-library/react"
 import Code from "./index"
-import { registeredLangs } from "./index"
+import { exportedForTesting } from "./index"
 
 import hljs from "highlight.js/lib/core"
 import typescript from "highlight.js/lib/languages/typescript"
 import xml from "highlight.js/lib/languages/xml"
 
+const { registeredLangs } = exportedForTesting
 const lang = "ts"
 const text = "test.ts"
 const value = `function test(): string {

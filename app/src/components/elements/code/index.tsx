@@ -24,8 +24,12 @@ type Props = {
 }
 
 // テスト用
-export function registeredLangs(): string[] {
+function registeredLangs(): string[] {
 	return hljs.listLanguages()
+}
+
+export const exportedForTesting = {
+	registeredLangs
 }
 
 export default function Code({ lang, name, value }: Props) {
