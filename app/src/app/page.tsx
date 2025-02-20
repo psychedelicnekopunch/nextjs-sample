@@ -96,6 +96,13 @@ export default function Home() {
 					<p>React Hooks</p>
 				</Link>
 
+				<Link href="/http_client" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						HTTP Client <span>-&gt;</span>
+					</h2>
+					<p>fetch()</p>
+				</Link>
+
 				<Link href="/load_external_js" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Load External JS <span>-&gt;</span>

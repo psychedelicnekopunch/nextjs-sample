@@ -8,7 +8,6 @@ import hljs from "highlight.js/lib/core"
 import typescript from "highlight.js/lib/languages/typescript"
 import xml from "highlight.js/lib/languages/xml"
 
-const { registeredLangs } = exportedForTesting
 const lang = "ts"
 const text = "test.ts"
 const value = `function test(): string {
@@ -38,6 +37,7 @@ describe("/components › /elements › <Code>", () => {
 	})
 
 	test("hljs.registerLanguage() チェック", () => {
+		const { registeredLangs } = exportedForTesting
 		const langs: string[] = ["bash", "javascript", "json", "typescript", "plaintext", "xml"]
 		expect(registeredLangs()).toEqual(expect.arrayContaining(langs))
 	})

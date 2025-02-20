@@ -1,0 +1,8 @@
+@use "@/styles/mixins" as mixins;
+
+.image {
+	max-width: 300px;
+	// width: 100%;
+	width: auto;
+	height: auto;
+}

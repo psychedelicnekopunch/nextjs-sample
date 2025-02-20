@@ -11,8 +11,15 @@ services:
             - 8080:3000
         tty: true
         working_dir: /var/www/html
+        networks:
+            - httpclient-checker-network
         environment:
             # https://nextjs.org/docs/messages/non-standard-node-env
             #
             - NODE_ENV=development
         command: "npm run dev"
+
+
+networks:
+    httpclient-checker-network:
+        name: httpclient_checker_network

@@ -15,7 +15,7 @@ type Props = {
 
 type Type = "text" | "file"
 
-export default function Input({ value, type = "text", onChange = () => {} }: Props) {
+export default function Input({ value, type = "text", onChange }: Props) {
 	const id: string = useId()
 
 	// function init() {

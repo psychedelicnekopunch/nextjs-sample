@@ -29,7 +29,7 @@ function registeredLangs(): string[] {
 }
 
 export const exportedForTesting = {
-	registeredLangs
+	registeredLangs,
 }
 
 export default function Code({ lang, name, value }: Props) {

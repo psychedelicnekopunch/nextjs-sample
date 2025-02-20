@@ -45,8 +45,9 @@ const config: Config = {
 	coverageReporters: [
 		// "json",
 		"text",
-		// "lcov",
-		// "clover"
+		"lcov",
+		// "clover",
+		// "html-spa",
 	],
 
 	// An object that configures minimum threshold enforcement for coverage results
@@ -155,7 +156,8 @@ const config: Config = {
 
 	// The test environment that will be used for testing
 	// testEnvironment: "node",
-	testEnvironment: "jsdom",
+	// testEnvironment: "jsdom",
+	testEnvironment: "./CustomJSDOMEnvironment.ts",
 
 	// Options that will be passed to the testEnvironment
 	// testEnvironmentOptions: {},
