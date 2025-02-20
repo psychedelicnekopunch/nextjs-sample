@@ -40,7 +40,7 @@ describe("/infrastructure › fetch.ts", () => {
 	test("patch() チェック", async () => {
 		const response = await patch<Params>({
 			url: await api(),
-			params, params,
+			params: params,
 		})
 		const result = await apiResult(response)
 		expect(result.data.test).toBe(params.test)
@@ -50,7 +50,7 @@ describe("/infrastructure › fetch.ts", () => {
 	test("put() チェック", async () => {
 		const response = await put<Params>({
 			url: await api(),
-			params, params,
+			params: params,
 		})
 		const result = await apiResult(response)
 		expect(result.data.test).toBe(params.test)
@@ -60,7 +60,7 @@ describe("/infrastructure › fetch.ts", () => {
 	test("remove() チェック", async () => {
 		const response = await remove<Params>({
 			url: await api(),
-			params, params,
+			params: params,
 		})
 		const result = await apiResult(response)
 		expect(result.data.test).toBe(params.test)
@@ -92,7 +92,6 @@ describe("/infrastructure › fetch.ts", () => {
 		expect(isErrorForApiResult(response500)).toBe(true)
 	})
 
-
 	test("apiResult() の if 失敗判定チェック", async () => {
 		// const formData = new FormData()
 		// formData.append("test", "test1")
@@ -104,16 +103,13 @@ describe("/infrastructure › fetch.ts", () => {
 		expect(failedResult.data).toBe(null)
 	})
 
-
 	test("createData() の if 判定チェック", async () => {
-
 		// URLSearchParams で使用した関数を用意
 		class Test {
-
 			#str = ""
 
 			append(key: string, value: string) {
-				this.#str = (this.#str) ? `${this.#str}&${key}=${value}` : `${key}=${value}`
+				this.#str = this.#str ? `${this.#str}&${key}=${value}` : `${key}=${value}`
 			}
 
 			toString(): string {
@@ -123,7 +119,7 @@ describe("/infrastructure › fetch.ts", () => {
 
 		const { createData } = await exportedForTesting()
 		const successData = createData<Params, URLSearchParams>(params, new URLSearchParams())
-		const failedData1 = createData<String, URLSearchParams>("params", new URLSearchParams())
+		const failedData1 = createData<string, URLSearchParams>("params", new URLSearchParams())
 		const failedData2 = createData<Params, Test>(params, new Test())
 		expect(successData.toString()).toBe("test=test1&tests=test1&tests=test2&tests=test3")
 		expect(failedData1.toString()).toBe("")
