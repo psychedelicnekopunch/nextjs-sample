@@ -4,12 +4,12 @@ module.exports = {
     script: 'node_modules/.bin/next',
     args: 'start',
     env_production: {
-        name: "ticketvillage-web-prod",
+        name: "nextjs-sample-prod",
         NODE_ENV: "production",
         PORT: 3000,
     },
     env_staging: {
-        name: "ticketvillage-web-staging",
+        name: "nextjs-sample-stg",
         NODE_ENV: "staging",
         PORT: 3001,
     }
