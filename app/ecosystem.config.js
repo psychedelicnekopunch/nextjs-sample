@@ -8,9 +8,9 @@ module.exports = {
         NODE_ENV: "production",
         PORT: 3000,
     },
-    env_staging: {
+    env_development: {
         name: "nextjs-sample-stg",
-        NODE_ENV: "staging",
+        NODE_ENV: "development",
         PORT: 3001,
     }
   }]
