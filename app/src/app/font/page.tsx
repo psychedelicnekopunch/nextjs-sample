@@ -70,7 +70,7 @@ const meowScript = Meow_Script({
 export default function Page() {
 	return (
 		<main className={meowScript.className}>
-			サンプル
+			Sample
 		</main>
 	)
 }`}
@@ -264,7 +264,7 @@ export default function RootLayout({
 export default function Page() {
 	return (
 		<main className={styles.font}>
-			サンプル
+			Sample
 		</main>
 	)
 }`}
