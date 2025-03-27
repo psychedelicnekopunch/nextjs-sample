@@ -1,0 +1,61 @@
+@use "@/styles/mixins" as mixins;
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6rem;
+	min-height: 100vh;
+
+	h1 {
+		@include mixins.padding($bottom: "large");
+		@include mixins.font($size: "xxlarge");
+	}
+
+	h2 {
+		@include mixins.padding($bottom: "large");
+		@include mixins.font($size: "large");
+	}
+}
+
+.google-fonts01 {
+	@include mixins.font($size: "xlarge");
+}
+
+.google-fonts02 {
+	@include mixins.font($size: "xlarge");
+
+	& {
+		font-family: var(--font-dot-gothic16);
+	}
+}
+
+.adobe-fonts01 {
+	@include mixins.font($size: "xlarge");
+
+	& {
+		font-family: "ab-shonen-oto", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+}
+
+.adobe-fonts02 {
+	@include mixins.font($size: "xlarge");
+
+	& {
+		font-family: "alternate-gothic-no-1-d", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+}
+
+.local-fonts {
+	@include mixins.font($size: "xlarge");
+
+	& {
+		font-family: var(--font-best-ten-crt);
+		// font-family: var(--font-best-ten-dot);
+	}
+}

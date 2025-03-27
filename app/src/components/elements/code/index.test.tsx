@@ -19,7 +19,7 @@ hljs.registerLanguage("xml", xml)
 
 describe("/components › /elements › <Code>", () => {
 	test("lang チェック", () => {
-		const langs: string[] = ["bash", "js", "json", "ts", "txt"]
+		const langs: string[] = ["bash", "js", "json", "scss", "ts", "txt"]
 		for (const [_, v] of langs.entries()) {
 			render(<Code lang={v} name={text} value={value} />)
 		}

@@ -89,6 +89,13 @@ export default function Home() {
 					</p>
 				</Link>
 
+				<Link href="/font" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Font <span>-&gt;</span>
+					</h2>
+					<p>Google Fonts, Adobe Fonts, フリーフォント</p>
+				</Link>
+
 				<Link href="/hooks" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Hooks <span>-&gt;</span>
