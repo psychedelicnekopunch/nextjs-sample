@@ -180,7 +180,7 @@ export default function RootLayout({
 					})(document);
 				\`}
 			</Script>
-			<body className={inter.className}>{children}</body>
+			<body>{children}</body>
 		</html>
 	)
 }`}
@@ -242,7 +242,7 @@ export default function RootLayout({
 	return (
 		<html lang="ja">
 			<Script id={adobeFontsId} stylesheets={["https://use.typekit.net/xxxxxxx.css"]}></Script>
-			<body className={inter.className}>{children}</body>
+			<body>{children}</body>
 		</html>
 	)
 }`}
