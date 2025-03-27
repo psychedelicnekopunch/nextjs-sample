@@ -39,7 +39,7 @@ export default function Font() {
 					<div className={`${meowScript.className} ${styles["google-fonts01"]}`}>
 						<List>
 							<li>
-								<a href="https://fonts.google.com/specimen/Meow+Script?categoryFilters=Feeling:%2FExpressive%2FCute" target="_blank">
+								<a href="https://fonts.google.com/specimen/Meow+Script" target="_blank">
 									Meow Script - Google Fonts <Ungroup />
 								</a>
 							</li>
