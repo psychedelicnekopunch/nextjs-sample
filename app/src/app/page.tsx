@@ -110,6 +110,13 @@ export default function Home() {
 					<p>fetch()</p>
 				</Link>
 
+				<Link href="/ip_host_ua" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						IP HOST UA <span>-&gt;</span>
+					</h2>
+					<p>IPアドレス, HOSTネーム, UserAgent</p>
+				</Link>
+
 				<Link href="/load_external_js" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Load External JS <span>-&gt;</span>
