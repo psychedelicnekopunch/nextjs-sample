@@ -21,7 +21,17 @@
 		"pre:commit": "npm run env:precommit && npm run format && npm run test",
 		"test": "jest",
 		"test:clearcache": "jest --clearCache",
-		"test:watch": "jest --watch"
+		"test:watch": "jest --watch",
+		"pm2-production-start": "pm2 start ecosystem.config.js --env production",
+		"pm2-production-reload": "pm2 reload nextjs-sample-prod",
+		"pm2-production-restart": "pm2 restart nextjs-sample-prod",
+		"pm2-production-stop": "pm2 stop nextjs-sample-prod",
+		"pm2-production-delete": "pm2 delete nextjs-sample-prod",
+		"pm2-staging-start": "pm2 start ecosystem.config.js --env development",
+		"pm2-staging-reload": "pm2 reload nextjs-sample-stg",
+		"pm2-staging-restart": "pm2 restart nextjs-sample-stg",
+		"pm2-staging-stop": "pm2 stop nextjs-sample-stg",
+		"pm2-staging-delete": "pm2 delete nextjs-sample-stg"
 	},
 	"dependencies": {
 		"@types/js-cookie": "^3.0.6",
