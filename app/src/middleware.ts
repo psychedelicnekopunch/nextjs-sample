@@ -28,6 +28,6 @@ export function middleware(request: NextRequest) {
 export const config = {
 	// matcher: '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
 	// matcher: "/((?!api|assets|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
-	matcher: ["/cookie", "/middleware"],
+	matcher: ["/cookie", "/middleware", "/ip_host_ua"],
 	// matcher: "/middleware",
 }
