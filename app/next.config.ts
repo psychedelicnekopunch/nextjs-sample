@@ -1,6 +1,8 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+	// https://nextjs.org/docs/app/building-your-application/deploying/static-exports
+	// output: "export",
 	/* config options here */
 	reactStrictMode: true,
 	// https://psychedelicnekopunch.com/archives/3655
