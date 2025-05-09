@@ -37,7 +37,7 @@
 		"@types/js-cookie": "^3.0.6",
 		"highlight.js": "^11.11.1",
 		"js-cookie": "^3.0.5",
-		"next": "15.0.2",
+		"next": "^15.3.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"the-new-css-reset": "^1.11.3"

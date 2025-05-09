@@ -10,21 +10,31 @@ const nextConfig: NextConfig = {
 		silenceDeprecations: ["legacy-js-api"],
 	},
 	// SVG ( https://github.com/vercel/next.js/tree/canary/examples/svg-components )
-	experimental: {
-		turbo: {
-			rules: {
-				"*.svg": {
-					loaders: ["@svgr/webpack"],
-					as: "*.js",
-				},
+	// experimental: {
+	// 	turbo: {
+	// 		rules: {
+	// 			"*.svg": {
+	// 				loaders: ["@svgr/webpack"],
+	// 				as: "*.js",
+	// 			},
+	// 		},
+	// 	},
+	// 	// supported by Next.js with Turbopack:
+	// 	// - Unsupported Next.js configuration option(s)
+	// 	// To use Turbopack, remove the following configuration options:
+	// 	// - experimental.typedRoutes
+	// 	//
+	// 	// typedRoutes: true,
+	// },
+	// https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack
+	// v15.0.2 → v15.3.1
+	turbopack: {
+		rules: {
+			"*.svg": {
+				loaders: ["@svgr/webpack"],
+				as: "*.js",
 			},
 		},
-		// supported by Next.js with Turbopack:
-		// - Unsupported Next.js configuration option(s)
-		// To use Turbopack, remove the following configuration options:
-		// - experimental.typedRoutes
-		//
-		// typedRoutes: true,
 	},
 	webpack(config) {
 		// config.module.rules.push({

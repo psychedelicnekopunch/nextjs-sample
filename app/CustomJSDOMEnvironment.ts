@@ -7,6 +7,15 @@ export default class CustomJSDOMEnvironment extends JSDOMEnvironment {
 	constructor(...args: ConstructorParameters<typeof JSDOMEnvironment>) {
 		super(...args)
 
+		// https://github.com/mswjs/jest-fixed-jsdom/blob/main/index.js
+		// this.customExportConditions = args.customExportConditions || [""]
+
+		this.global.TextDecoder = TextDecoder
+		this.global.TextEncoder = TextEncoder
+		this.global.TextDecoderStream = TextDecoderStream
+		this.global.TextEncoderStream = TextEncoderStream
+		this.global.ReadableStream = ReadableStream
+
 		// FIXME https://github.com/jsdom/jsdom/issues/1724
 		if (!this.global.fetch) {
 			this.global.fetch = fetch
