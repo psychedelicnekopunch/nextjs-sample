@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { useId } from "react"
 import Script from "next/script"
 import { Inter } from "next/font/google"
+import VisibilitychangeReloader from "@/components/elements/visibilitychangeReloader"
 import "the-new-css-reset/css/reset.css"
 import "./globals.scss"
 
@@ -37,7 +38,10 @@ export default function RootLayout({
 					})(document);
 				`}
 			</Script>
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				<VisibilitychangeReloader />
+				{children}
+			</body>
 		</html>
 	)
 }
