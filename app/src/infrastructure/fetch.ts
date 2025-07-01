@@ -1,5 +1,7 @@
 "use server"
 
+// import { cookies } from "next/headers"
+
 enum Method {
 	Get = "GET",
 	Post = "POST",
@@ -46,11 +48,40 @@ function isErrorForApiResult(response?: Response) {
 	return true
 }
 
+// Cookie について
+//
+// get は use server, use client 関係なく使用できる。
+// が、単体テスト時にエラーが出る。
+// https://nextjs.org/docs/messages/next-dynamic-api-wrong-context
+//
+// set, remove は "use client" を挟まないとできない。
+// この fetch ラッパーは use server, use client どちらにも使う想定で作成しているので、
+// set, remove はここでは行わない。
+//
+// async function cookieTest(): Promise<Void> {
+// 	const cookieStore = await cookies()
+// 	// const key = "cookietest"
+// 	const key = "ipAddress"
+// 	//
+// 	// https://nextjs.org/docs/app/api-reference/functions/cookies#options
+// 	// You can use the (await cookies()).set(name, value, options) method in a Server Action or Route Handler to set a cookie.
+// 	//
+// 	// cookieStore.set("cookietest", "success", {
+// 	// 	path: "/",
+// 	// 	maxAge: 60,
+// 	// })
+// 	console.log(cookieStore.get(key))
+// 	// cookieStore.delete(key)
+// 	// console.log(cookieStore.get(key))
+// }
+
 export async function get<T>({ url, params, headers = {} }: FetchRequest<T>): Promise<Response> {
+	// await cookieTest()
 	return await client<T>(Method.Get, url, params, headers)
 }
 
 export async function post<T>({ url, params, headers = {} }: FetchRequest<T>): Promise<Response> {
+	// await cookieTest()
 	return await client<T>(Method.Post, url, params, headers)
 }
 

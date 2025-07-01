@@ -4,7 +4,7 @@ import { describe, expect, test } from "@jest/globals"
 import { api, apiResult } from "./fetch"
 import { exportedForTesting } from "./fetch"
 
-const apiURL = "http://httpclient-checker.psychedelicnekopunch.com/"
+const apiURL = "http://localhost:8888/"
 
 type Params = {
 	test: string

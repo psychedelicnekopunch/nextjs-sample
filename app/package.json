@@ -3,8 +3,8 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"env:test": "rm -f .env.local && cp .env.test .env.local",
 		"env:dev": "rm -f .env.local && cp .env.dev .env.local",
-		"env:precommit": "rm -f .env.local && cp .env.precommit .env.local",
 		"env:stg": "rm -f .env.local && cp .env.stg .env.local",
 		"env:prod": "rm -f .env.local && cp .env.prod .env.local",
 		"dev": "npm run env:dev && next dev --turbopack",
@@ -18,7 +18,7 @@
 		"prettier": "npx prettier './**/*.{ts,tsx,json,scss}'",
 		"format": "npx prettier --write './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color",
 		"format:check": "npx prettier --check './**/*.{ts,tsx,json,scss}' && next lint && stylelint \"**/*.scss\" --color",
-		"pre:commit": "npm run env:precommit && npm run format && npm run test",
+		"pre:commit": "npm run env:test && npm run format && npm run test",
 		"test": "jest",
 		"test:clearcache": "jest --clearCache",
 		"test:watch": "jest --watch",
@@ -35,7 +35,6 @@
 	},
 	"dependencies": {
 		"@types/js-cookie": "^3.0.6",
-		"dayjs": "^1.11.13",
 		"highlight.js": "^11.11.1",
 		"js-cookie": "^3.0.5",
 		"next": "^15.3.1",
