@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
+import { getTest } from "@/database/testRepository"
 
 function findClientIPAddress(str: string | null): string {
 	let res = ""
@@ -16,8 +17,18 @@ function findClientIPAddress(str: string | null): string {
 	return res
 }
 
+
+async function fetchTest(): Promise<object> {
+	return await getTest({ test: "middleware", tests: ["this", "is", "middleware"]})
+}
+
+
 // This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+
+	const ft = await fetchTest()
+	console.log(ft)
+
 	const response = NextResponse.next()
 
 	let ipAddress = "unknown"
@@ -59,7 +70,7 @@ export function middleware(request: NextRequest) {
 	}
 	response.cookies.set({
 		name: "test3",
-		value: "in middleware",
+		value: "test3 in middleware",
 		path: "/",
 		maxAge: 60 * 5, // 5分,
 	})

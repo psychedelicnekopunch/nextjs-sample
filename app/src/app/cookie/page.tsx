@@ -5,13 +5,14 @@ import Code from "@/components/elements/code"
 import Ungroup from "@/assets/icon/ungroup.svg"
 import CookieForClient from "@/features/cookieForClient"
 import CookieForServer from "@/features/cookieForServer"
+import { CookieEnum } from "@/consts/cookie"
 import { cookies } from "next/headers"
 
 export default async function Cookie() {
 	const cookieStore = await cookies()
 	// const test2 = cookieStore.get('test')
-	const test2 = cookieStore.get("test2")
-	const test3 = cookieStore.get("test3")
+	const test2 = cookieStore.get(CookieEnum.Test2)
+	const test3 = cookieStore.get(CookieEnum.Test3)
 	// console.log(test2)
 	// console.log(test3)
 	return (
