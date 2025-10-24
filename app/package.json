@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"env:test": "rm -f .env.local && cp .env.test .env.local",
+		"env:test": "rm -f .env.local && cp .env.dev .env.local",
 		"env:dev": "rm -f .env.local && cp .env.dev .env.local",
 		"env:stg": "rm -f .env.local && cp .env.stg .env.local",
 		"env:prod": "rm -f .env.local && cp .env.prod .env.local",

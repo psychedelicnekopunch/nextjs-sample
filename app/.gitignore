@@ -33,7 +33,6 @@ yarn-error.log*
 .env*
 !.env.test
 !.env.dev
-!.env.precommit
 !.env.stg
 !.env.prod
 
