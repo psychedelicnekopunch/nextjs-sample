@@ -89,6 +89,13 @@ export default function Home() {
 					</p>
 				</Link>
 
+				<Link href="/fingerprinting" className={styles.card} rel="noopener noreferrer">
+					<h2>
+						Fingerprinting <span>-&gt;</span>
+					</h2>
+					<p>with ThumbmarkJS</p>
+				</Link>
+
 				<Link href="/font" className={styles.card} rel="noopener noreferrer">
 					<h2>
 						Font <span>-&gt;</span>

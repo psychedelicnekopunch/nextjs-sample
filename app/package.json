@@ -34,6 +34,7 @@
 		"pm2-staging-delete": "pm2 delete nextjs-sample-stg"
 	},
 	"dependencies": {
+		"@thumbmarkjs/thumbmarkjs": "^1.3.2",
 		"@types/js-cookie": "^3.0.6",
 		"highlight.js": "^11.11.1",
 		"js-cookie": "^3.0.5",
